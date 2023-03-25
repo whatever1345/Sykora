@@ -28,11 +28,11 @@ public class MainProcess {
             Cell c = r.getCell(1);
             int val = convertToInt(c.getStringCellValue());
 
-                // Ignore non-positive value
+            // Ignore non-positive value and any unconvertible format
             if (val < 1)
                 continue;
 
-                // Output if Prime
+            // Output if Prime
             if (isPrimeSieve(val))
                 System.out.println(val);
         }
