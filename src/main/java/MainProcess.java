@@ -26,21 +26,23 @@ public class MainProcess {
 
             // Get B Column
             Cell c = r.getCell(1);
-            int val = Integer.parseInt(c.getStringCellValue());
+            int val = convertToInt(c.getStringCellValue());
 
-            // Ignore non-positive value
+                // Ignore non-positive value
             if (val < 1)
                 continue;
 
-            // Output if Prime
+                // Output if Prime
             if (isPrimeSieve(val))
                 System.out.println(val);
+        }
+    }
 
-            //if (isPrimeBruteForce(Integer.parseInt(strValue)))
-                //System.out.println(strValue);
-
-            //System.out.println(c.getStringCellValue() + " is " +
-            //isPrimeSieve(Integer.parseInt(c.getStringCellValue())));
+    public static int convertToInt(String n){
+        try {
+            return Integer.parseInt(n);
+        } catch (NumberFormatException e) {
+            return 0; // if return 0 then we ignore it
         }
     }
 
