@@ -41,7 +41,7 @@ public class MainProcess {
     public static int convertToInt(String n){
         try {
             return Integer.parseInt(n);
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             return 0; // if return 0 then we ignore it
         }
     }
